@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "sky_block",
+  "version": "${version}",
+  "name": "sky_block",
+  "description": "Skyblock World Generation for minecraft fabric initial island generated based off NBT data the host intends to use, Biome and structure position and bounding box preserved",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/skyblock/Skyblock.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.github.exdocious_dev.sky_block.client.Sky_blockDataGenerator"
+    ],
+    "client": [
+      "com.github.exdocious_dev.sky_block.client.Sky_blockClient"
+    ],
+    "main": [
+      "com.github.exdocious_dev.sky_block.Sky_block"
+    ]
+  },
+  "mixins": [
+    "sky_block.mixins.json",
+    {
+      "config": "sky_block.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
