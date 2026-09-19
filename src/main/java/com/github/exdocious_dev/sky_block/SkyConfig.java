@@ -13,9 +13,9 @@ public final class SkyConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger("sky_block");
 
     public static String islandSelected = "Skyblock Island";
-    public static int offsetX = 4;
-    public static int offsetY = 2;
-    public static int offsetZ = 4;
+    public static int offsetX = 3;
+    public static int offsetY = 4;
+    public static int offsetZ = 3;
 
     public static Path dir() { return FabricLoader.getInstance().getConfigDir().resolve("sky_block"); }
     public static Path islandsDir() { return dir().resolve("islands"); }
@@ -31,9 +31,9 @@ public final class SkyConfig {
                         "# Island Selected = name of a .nbt file in the islands folder (without .nbt)",
                         "# Offsets = the block inside the island that lands on world X0 / Y64 / Z0 (the spawn point)",
                         "Island Selected = Skyblock Island",
-                        "Island X offset = 4",
-                        "Island Y offset = 1",
-                        "Island Z offset = 4",
+                        "Island X offset = 3",
+                        "Island Y offset = 4",
+                        "Island Z offset = 3",
                         ""));
             }
             for (String line : Files.readAllLines(file)) {

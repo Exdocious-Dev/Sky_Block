@@ -69,8 +69,10 @@ public final class SkyIsland {
             String[] states = new String[palette.size()];
             for (int i = 0; i < states.length; i++) {
                 Map<String, Object> entry = (Map<String, Object>) palette.get(i);
-                Map<String, Object> props = (Map<String, Object>) entry.get("Properties");
-                StringBuilder sb = new StringBuilder((String) entry.get("Name"));
+                String name = (String) entry.getOrDefault("id", entry.get("Name"));
+                Map<String, Object> props = (Map<String, Object>) entry.getOrDefault("properties", entry.get("Properties"));
+                if (name == null) throw new IOException("Palette entry has no block name: " + entry);
+                StringBuilder sb = new StringBuilder(name);
                 if (props != null && !props.isEmpty()) {
                     sb.append('[');
                     boolean first = true;
